@@ -32,7 +32,7 @@ public class girişsayfası implements ActionListener {
         panelalt.add(labelalt);
         panelalt.add(şifre);
 
-        button = new JButton();
+        button = new JButton(  "giriş yap");
         button.addActionListener(this);
 
         frame = new JFrame("giriş sayfası");
@@ -40,9 +40,10 @@ public class girişsayfası implements ActionListener {
         frame.setSize(400,300);
         frame.setLayout(new GridLayout(3,1));
 
-        frame.add(button);
+
         frame.add(panelüst);
         frame.add(panelalt);
+        frame.add(button);
         frame.setVisible(true);
     }
 
@@ -56,7 +57,17 @@ public class girişsayfası implements ActionListener {
                 JOptionPane.showMessageDialog(null,"lütfen tüm alanları doldur","hata",JOptionPane.ERROR_MESSAGE);
 
             }
+            if (şifre.length()<5){
+                JOptionPane.showMessageDialog(null,"minimum 5 karakter","hata",JOptionPane.ERROR_MESSAGE);
 
+            }
+            if (kullanıcıadı.equals("halil")&& şifre.equals("1234")){
+                JOptionPane.showMessageDialog(null,"giriş başarılı ","başarılı",JOptionPane.INFORMATION_MESSAGE);
+
+            }
+            else {
+                JOptionPane.showMessageDialog(null,"kullanıcı adı veya şifre hatalı ","hata",JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 }
